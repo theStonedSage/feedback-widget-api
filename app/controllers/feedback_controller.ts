@@ -4,16 +4,6 @@ import { HttpContext } from "@adonisjs/core/http"
 import admin from '../../start/firebase.js';
 import { getFullDocData } from "../../utils/helpers.js";
 
-interface Feedback {
-    userId?: string,
-    responses:{
-        label: string;
-        description?: string;
-        value: string | number 
-    }[]
-    status: 'pending'
-}
-
 export default class FeedbackController {
     public async add({ request, response }: HttpContext) {
         try {
